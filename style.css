@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box    
+}
+
+.container{
+    max-width: 600px;
+    margin: 100px auto;
+    width: 100%;
+}
+
+h1{
+    text-align: center;
+}
+
+form{
+    margin-top: 100px;
+}
+
+input,
+textarea,
+button {
+    display: block;
+    padding: 6px;
+    margin-bottom: 6px;
+    width: 100%;
+    resize: none;
+}
+
+button{
+    background-color: orange;
+    border: none;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: indigo;
+    color: #fff;
+    font-size: 20px;
+}
