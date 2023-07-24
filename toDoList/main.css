@@ -1,0 +1,186 @@
+:root{
+    --primary-color: #0B2447;
+    --secondary-color: #19376D;
+    --third-color: #576CBC;
+    --fourth-color: #A5D7E8;
+    --done-color: green;
+    --main-font: 'Roboto', sans-serif;
+
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    font-family: var(--main-font);
+}
+
+header{
+    text-align: center;
+    padding: 30px;
+    font-weight: bolder;
+    font-size: 40px;
+    
+
+}
+
+.list-workspace{
+    max-width: 800px;
+    margin: 0 auto;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.container{
+    max-width: 750px;
+    display: block;
+}
+
+form{
+    max-width: 700px;
+    width: 100vh;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+form .form-task{
+    width: 400px;
+    height: 70px;
+}
+
+.input-task{
+    width: 400px;
+    padding: 10px;
+    font-size: 18px;
+    margin: 5px auto;
+    border-radius: 10px;
+}
+
+form .form-btn{
+    width: 300px;
+    margin: 10px 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+form .form-btn button{
+    width: 100px;
+    height: 35px;
+}
+
+form .form-btn .reset{
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+}
+
+form .form-btn .add{
+    background-color: var(--done-color);
+    border: none;
+    border-radius: 10px;
+}
+
+button{
+    text-transform: uppercase;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+.material-symbols-outlined{
+    font-size: 18px;
+}
+
+.body-list ul.list{
+    list-style: none;
+}
+
+
+#list li{
+    position: relative;
+    background-color: var(--primary-color);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid var(--fourth-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    transition: background-color 300ms ease;
+}
+
+
+
+
+#list li:hover{
+    background-color: var(--secondary-color)
+    ;
+}
+
+#list li #check-task{
+    position: relative;
+    background-color: var(--third-color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: background-color 100ms ease;
+    
+    
+}
+
+#list li #check-task button{
+    position: relative;
+    background-color: yellowgreen;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    width: 30px;
+    height: 30px;
+}
+
+#list li #check-task .taskOk .material-symbols-outlined{
+    position: absolute;
+    font-size: 30px;
+}
+
+#list li #check-task button:hover{
+    background-color: var(--done-color);
+}
+
+
+#list li:hover button.remove{
+    opacity: 1;
+}
+
+
+#list li button.remove{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    color: #fff;
+    right: 20px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 300ms ease;
+}
+
+
