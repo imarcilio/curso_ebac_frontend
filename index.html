@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Formulário de Cadastro</h1>
+    </header>
+    <section>
+        <h2>Insira seus dados</h2>
+        <div class="container inputInfo">
+            
+            <div class="form">
+                <form id="formInput" name="personData">
+                    <div class="formSpace">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" name="nome" id="nome" required>
+                    </div>
+                    <div class="formSpace">
+                        <label for="email">E-mail:</label>
+                        <input type="email" name="email" id="email"required>
+                    </div>
+                    <div class="formSpace">
+                        <label for="phoneNum">Telefone:</label>
+                        <input type="tel" name="phoneNum" id="phoneNum" required>
+                    </div>
+                    <div class="formSpace">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" name="cpf" id="cpf" required>
+                    </div>
+                    <div class="formSpace cep">
+                        <label for="cep">cep:</label>
+                        <div class="cepInfos">
+                            <input type="text" name="cep" id="cep" required>
+                            <!-- <button id="cepSearch" type="submit">BUSCAR</button> -->
+                        </div>
+                    </div>
+                    <div class="formSpace">
+                        <label for="address">Endereço Completo:</label>
+                        <input type="address" name="address" id="address">
+                    </div>
+                    <div class="addressMoreInfo">
+                        <div class="formSpace">
+                            <label for="homeNum">Número:</label>
+                            <input type="homeNum" name="homeNum" id="homeNum">
+                        </div>
+                        <div class="formSpace addMore">
+                            <label for="addressAdictional">Complemento:</label>
+                            <input type="addressAdictional" name="addressAdictional" id="addressAdictional">
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+            <div class="mapShow">
+                <h3>Veja no mapa o seu endereço</h3>
+                <div class="map">
+                    <img src="./src/mapBraziltest2.webp" alt="Imagem de mapa"> 
+                </div>
+                <div class="btns">
+                    <button type="submit" form="formInput" id="confirm">CONFIRMAR</button>
+                    <button type="reset" form="formInput" id="reset">LIMPAR</button>
+                </div>
+            </div>
+        </div>
+
+        
+    </section>
+    <section class="infoList">
+        <h2>Lista de nomes cadastrados
+
+        </h2>
+        <div class="container listData">
+        <table id="personas">
+            <thead>
+                <tr>
+                    <th class="liname"><span>Nome</span></th>
+                    <th class="liemail"><span>E-mail</span></th>
+                    <th class="litel"><span>Telefone</span></th>
+                    <th class="licpf"><span>CPF</span></th>
+                    <th class="listate"><span>Estado</span></th>
+                    <th class="delete"><span>MAIS</span></th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+            </table>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/jquery.mask.min.js"></script>
+    <script src="/js/root.js"></script>
+</body>
+</html>

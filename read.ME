@@ -1,0 +1,88 @@
+# Sistema de Preenchimento de Formulário com Consulta de CEP
+
+## Descrição
+## A versão do projeto terá upgrades e serão inseridas novas funcionalidade (v2.0)
+
+Este é um projeto que permite aos usuários preencher um formulário com informações pessoais, incluindo nome, email, telefone e CPF. Além disso, o sistema conta com a funcionalidade de consulta de endereço por meio de um CEP, usando a API do Via CEP.
+
+## Funcionalidades
+
+1. Preenchimento de Informações Pessoais:
+   - CAMPO 1 - Nome;
+   - CAMPO 2 - Email;
+   - CAMPO 3 - Telefone;
+   - CAMPO 4 - CPF;
+
+2. Consulta de Endereço por CEP:
+   - No "CAMPO 5 - Input do Cep":
+     - 2.2  Submeter a busca com um "enter" ou no botão "buscar - CAMPO 6";
+     - 2.3 Será consumida uma API do site via CEP e no link será adicionada o valor da variável cep (2);
+     - 2.4 Ela retornará o objeto "data", com os seguintes resultados:
+       - CAMPO 6 - RETORNO
+         ```json
+         "OBJETO data" = [{
+             "cep": "01001-000",             // SERÁ ATRIBUÍDA A VARIÁVEL CEP
+             "logradouro": "Praça da Sé",    // SERÁ ATRIBUÍDA A VARIÁVEL ENDEREÇO
+             "complemento": "lado ímpar",    // SERÁ ATRIBUÍDA A VARIÁVEL COMPLEMENTO
+             "bairro": "Sé",                 // SERÁ ATRIBUÍDA A VARIÁVEL BAIRRO
+             "localidade": "São Paulo",      // SERÁ ATRIBUÍDA A VARIÁVEL CIDADE
+             "uf": "SP",                     // SERÁ ATRIBUÍDA A VARIÁVEL UF
+             "ibge": "3550308",              // NÃO SERÁ UTILIZADO
+             "gia": "1004",                  // NÃO SERÁ UTILIZADO
+             "ddd": "11",                    // NÃO SERÁ UTILIZADO
+             "siafi": "7107"                 // NÃO SERÁ UTILIZADO
+         }]
+         ```
+
+3. Preenchimento Automático de Endereço:
+   - Os "CAMPO 7 - logradouro" e " CAMPO 9 - complemento", serão preenchidos automaticamente;
+   - O "CAMPO 8 - NÚMERO "será inputado manualmente.
+
+4. Visualização do Logradouro no Mapa:
+   - O logradouro aparecerá no "CAMPO 10 - IMAGEM NO MAPA" indicando o logradouro; - (v2.0)
+
+5. Confirmação de Informações:
+   - Após o preenchimento do formulário, o usuário poderá clicar em "CAMPO 11 - adicionar", aparecerá um "CAMPO 12 - balão" com a informação para confirmação "CAMPO 13 - SIM" ou "NÃO";
+   - Opção Caso seja clicado no "CAMPO 14 - NÃO", aparecerá a janela de início;
+
+6. Haverá uma tabela abaixo ("CAMPO 15 - Tabela"), com as seguintes informações de cabeçalho:
+   - COLUNA 1 - NOME     - RETORNARÁ O VALOR DA VARIÁVEL DO CAMPO 1;
+   - COLUNA 2 - EMAIL    - RETONARÁ O VALOR DA VARIÁVEL DO CAMPO 2;
+   - COLUNA 3 - TELEFONE - RETORNARÁ O VALOR DA VARIÁVEL DO CAMPO 3;
+   - COLUNA 4 - CEF      - RETORNARÁ O VALOR DA VARIÁVEL DO CAMPO 4;
+   - COLUNA 5 - ESTADO   - RETORNARÁ UMA IMAGEM
+     - PEGAR O RETORNO DA DO "CAMPO 6" - DATA.UF
+     - HAVERÁ UM ARRAY "CAMPO 16 - LISTA DE BANCEIRAS" COM UM OBJETO ESTADO E DENTRO 27 OBJETOS COM OS ESTADOS COM:
+       - NOME DO ESTADO - CAMPO 15.5.1 
+       - NOME DA UF- CAMPO 15.5.2
+       - LINK DA IMAGEM DA BANDEIRA - CAMPO 15.5.3
+     - SE NO CAMPO 6 DO OBJETO DATA.UF FOR ENCONTRADO DENTRO DO OBJETO ESTADOS.UF, SERÁ RETORNADO UMA IMAGEM NA COLUNA DA TABELA ESTADO (COLUNA 5);
+   - COLUNA 6 - AÇÕES    - RETORNARÁ DOIS BOTÕES, ONDE:
+     - BOTÃO 1 - "CAMPO 17 - FULL INFO": Retornará todas as informações completas quando clicado e será exibido enquanto o mouse estiver em cima do balão. A lista retornará:
+       - NOME:           CAMPO 1
+       - EMAIL:          CAMPO 2 - HAVERÁ A OPÇÃO ENVIAR EMAIL
+       - TELEFONE:       CAMPO 3 - HAVERÁ A OPÇÃO DE LIGAR PARA O CONTATO PELO COMPUTADOR
+       - CPF:            CAMPO 4 - CONSULTAR CPF NO SITE DA RECEITA
+       - ENDEREÇO:       CAMPO 7
+       - NÚMERO:         CAMPO 8
+       - COMPLEMENTO:    CAMPO 9
+       - BAIRRO:         CAMPO 6.DATA.BAIRRO
+       - CIDADE:         CAMPO 6.DATA.CIDADE
+       - CEP:            CAMPO 5
+       - ESTADO:         CAMPO 6.DATA.UF
+       - LINKS:
+         - ADICIONAR O CONTATO NA AGENDA DO GOOGLE; (v2.0)
+         - ABRIR LINK NO MAPA COM A ROTA (MAPS); (v2.0)
+     - BOTÃO 2 - "CAMPO 18 - APAGAR": Apaga as informações do contato da tabela.
+
+## Tecnologias Utilizadas
+
+- HTML
+- CSS
+- JavaScript
+- jQuery
+- API do Via CEP -  Devido a problemas de acesso, foi utilizado o BrasilAPI
+
+## Como Executar o Projeto
+
+Para executar o projeto, basta abrir o arquivo `index.html` em um navegador web.
