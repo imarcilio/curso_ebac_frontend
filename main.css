@@ -1,0 +1,343 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+:root{
+    --primaryColor: rgb(243,243,243);
+    --secondaryColor:#fff;
+    --colorText: #000;
+    --detailColor:orange;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primaryColor);
+}
+
+header{
+    background-color: var(--colorText);
+    color: var(--primaryColor);
+    height: 75px;
+    margin-bottom: 50px;
+}
+
+header .container{
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.nav-bar{
+    width: 900px;
+    height: 100%;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mylogo{
+    width: 100px;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+}
+
+.burger{
+    display: none;
+}
+
+nav li a{
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px;
+    color: var(--primaryColor);
+}
+
+nav li a:hover{
+    border-bottom: 1px solid var(--detailColor);
+}
+
+/****************************************************************/
+
+section{
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    display: flex;
+}
+
+/****************************************************************/
+
+.container{
+    display: flex;
+
+}
+
+.imgStore img{
+    width: 500px;
+    margin-right: 20px;
+}
+
+
+h2{
+    margin-top: 0%;
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-bottom: 3px solid var(--colorText);
+}
+
+.about p, p{
+    font-size: 16px;
+    margin: 16px 0;
+}
+
+
+/******************************************************************/
+
+
+.produtos{
+    display: block;
+}
+
+.container .productsGrid{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4 , 24%);
+    column-gap: 2%;
+    row-gap: 5%;
+}
+
+.products{
+    margin-top: 15px;
+    max-width: 250px;
+    flex-direction: column;
+}
+
+
+
+.products img{
+    width: 200px;
+    height: 200px;
+}
+
+h3{
+    font-size:25px;
+    margin: 10px 0;
+}
+
+button{
+    margin-top: 16px;
+    padding:10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: var(--colorText);
+    color: var(--secondaryColor);
+}
+
+button:hover{
+    background-color: var(--secondaryColor);
+    color: var(--colorText);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+button,
+.products img{
+    cursor: pointer;
+}
+
+/*******************************************************************/
+
+footer{
+    width: 100%;
+    background-color: var(--colorText);
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.footer{
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.footer p{
+    
+    color: var(--primaryColor);
+    text-align: center;
+
+}
+
+/***********************************************************/
+
+@media screen and (max-width:1024px){
+    header .container{
+        max-width: 700px;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    .nav-bar{
+        max-width: 700px;
+        justify-content: space-between;
+    }
+
+
+    .sobre .container{
+        max-width: 700px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    section{
+        max-width: 900px;
+    }
+
+    .imgStore img{
+        margin-bottom: 20px;
+    }
+
+    .produHead {
+        margin: 0 auto;
+        max-width: 700px;
+    }
+
+    .produHead h2,
+    .about h2{
+        font-size: 30px;
+    }
+
+    .container{
+        display: grid;
+        align-items: center;
+        margin-left: 40px;
+        grid-template-columns: repeat(3 , 30%);
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+}
+
+@media screen and (max-width:768px){
+    header .container{
+        display: flex;
+        max-width: 500px;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+
+    nav{
+        justify-content: space-between;
+    }
+
+    .sobre .container{
+        max-width: 680px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .imgStore{
+        max-width: 680px;
+        margin: 0 auto;
+    }
+
+    .imgStore img{
+        width: 500px;
+    }
+    
+    .about{
+        margin-top: 20px;
+        max-width: 500px;
+    }
+    .about p{
+        font-size: 18px;
+        margin: 16px 0;
+    }
+
+    h2{
+        font-size:34px;
+        text-align: center;
+    }
+
+    .container{
+        display: grid;
+        align-items: center;
+        margin-left: 40px;
+        grid-template-columns: repeat(2 , 48%);
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    .products{
+        margin: 0 auto;
+    }
+
+    button{
+        margin-bottom: 20px;
+    }
+
+}
+
+@media screen and (max-width:490px){
+    header .container{
+        max-width: 300px;
+        margin: 0 auto;
+        height: 100%;
+    }
+    nav{
+        justify-content: space-between;
+    }
+
+    .list ul{
+        display: none;
+    }
+
+    .burger{
+        display: block;
+    }
+
+    span {
+        font-size: 40px;
+    }
+
+    .sobre .container{
+        max-width: 300px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .imgStore img{
+        width: 280px;
+    }
+
+    .container{
+        display: grid;
+        align-items: center;
+        margin-left: 60px;
+        grid-template-columns: repeat(1 , 90%);
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    .products{
+        margin: 0 auto;
+    }
+
+    button{
+        margin-bottom: 20px;
+    }
+
+}
